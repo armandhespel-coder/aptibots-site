@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nos Services - Aptibots</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "outline-variant": "#cfc4c5",
+                      "surface-tint": "#5e5e5e",
+                      "surface-bright": "#f9f9f9",
+                      "primary-container": "#1b1b1b",
+                      "inverse-primary": "#c6c6c6",
+                      "surface-white": "#FFFFFF",
+                      "secondary-fixed": "#e2e2e2",
+                      "error": "#ba1a1a",
+                      "on-error-container": "#93000a",
+                      "primary-fixed-dim": "#c6c6c6",
+                      "error-container": "#ffdad6",
+                      "background-canvas": "#F5F5F5",
+                      "surface-container-highest": "#e2e2e2",
+                      "surface": "#f9f9f9",
+                      "surface-variant": "#e2e2e2",
+                      "tertiary-fixed": "#e2e2e2",
+                      "on-secondary-container": "#5f6161",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary-fixed-variant": "#454747",
+                      "primary-fixed": "#e2e2e2",
+                      "on-primary-fixed": "#1b1b1b",
+                      "tertiary-container": "#1b1b1b",
+                      "on-tertiary": "#ffffff",
+                      "on-background": "#1b1b1b",
+                      "secondary": "#5d5f5f",
+                      "on-tertiary-container": "#848484",
+                      "secondary-fixed-dim": "#c6c6c7",
+                      "on-surface": "#1b1b1b",
+                      "tertiary": "#000000",
+                      "on-primary": "#ffffff",
+                      "on-surface-variant": "#4c4546",
+                      "surface-dim": "#dadada",
+                      "surface-container-high": "#e8e8e8",
+                      "on-primary-container": "#848484",
+                      "text-main": "#000000",
+                      "primary": "#000000",
+                      "background": "#f9f9f9",
+                      "on-primary-fixed-variant": "#474747",
+                      "tertiary-fixed-dim": "#c6c6c6",
+                      "on-secondary": "#ffffff",
+                      "outline": "#7e7576",
+                      "secondary-container": "#dcdddd",
+                      "on-secondary-fixed": "#1a1c1c",
+                      "surface-container": "#eeeeee",
+                      "inverse-surface": "#303030",
+                      "on-tertiary-fixed": "#1b1b1b",
+                      "surface-container-low": "#f3f3f3",
+                      "on-tertiary-fixed-variant": "#474747",
+                      "on-error": "#ffffff",
+                      "inverse-on-surface": "#f1f1f1"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "section-gap": "160px",
+                      "container-max": "1280px",
+                      "margin-desktop": "64px",
+                      "margin-mobile": "20px",
+                      "unit": "8px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "button-text": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "label-caps": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "headline-display-mobile": ["Inter"],
+                      "headline-display": ["Inter"],
+                      "body-md": ["Inter"],
+                      "headline-lg-mobile": ["Inter"]
+              },
+              "fontSize": {
+                      "button-text": ["16px", { "lineHeight": "20px", "fontWeight": "600" }],
+                      "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }],
+                      "headline-lg": ["72px", { "lineHeight": "76px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                      "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                      "headline-md": ["40px", { "lineHeight": "44px", "fontWeight": "700" }],
+                      "headline-display-mobile": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                      "headline-display": ["120px", { "lineHeight": "110px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                      "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                      "headline-lg-mobile": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+        body {
+            background-color: #f9f9f9;
+            color: #000000;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        /* Reveal Animation Styles */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                transition: opacity 0.3s ease-in-out;
+                transform: none !important;
+            }
+            .reveal.active {
+                transform: none !important;
+            }
+            * {
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+      </style>
+</head>
+<body class="bg-background text-primary antialiased min-h-screen flex flex-col">
+<!-- TopNavBar Shared Component -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop py-4 bg-background border-b border-primary">
+<a class="font-headline-md text-headline-md font-bold text-primary" href="index.html">
+            Aptibots
+        </a>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-primary font-bold border-b-2 border-primary hover:opacity-70 transition-opacity duration-300 font-label-caps text-label-caps" href="services.html">
+                Services
+            </a>
+<a class="text-secondary hover:opacity-70 transition-opacity duration-300 font-label-caps text-label-caps" href="case-studies.html">
+                Case Studies
+            </a>
+</div>
+<a class="bg-primary text-on-primary rounded-full px-6 py-3 font-button-text text-button-text hover:bg-secondary transition-all duration-300 flex items-center gap-2 active:scale-95" href="contact.html">
+            Réserver l'audit
+            <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</nav>
+<main class="flex-grow pt-[120px]"> <!-- Offset for fixed nav -->
+<!-- Header Section -->
+<header class="py-section-gap px-margin-desktop md:px-margin-desktop px-margin-mobile flex flex-col items-center justify-center text-center reveal">
+<h1 class="font-headline-display-mobile text-headline-display-mobile md:font-headline-display md:text-headline-display text-primary max-w-[1200px]">
+                Nos Services.
+            </h1>
+</header>
+<!-- Services Minimalist List -->
+<section class="px-margin-desktop md:px-margin-desktop px-margin-mobile pb-section-gap max-w-container-max mx-auto w-full reveal">
+<div class="flex flex-col border-t-2 border-primary">
+<!-- Service 1 -->
+<article class="py-12 border-b border-primary flex flex-col md:flex-row md:items-baseline justify-between group hover:bg-surface-container transition-all duration-300 cursor-pointer">
+<h2 class="font-headline-md text-headline-md text-primary w-full md:w-1/2">
+                        Automatisation IA
+                    </h2>
+<div class="w-full md:w-1/2 mt-4 md:mt-0 flex justify-between items-center">
+<p class="font-body-lg text-body-lg text-secondary group-hover:text-primary transition-colors duration-300">Tâches répétitives, chronophages, compliquées... J'audite vos processus pour supprimer les goulots d'étranglement opérationnels.</p>
+<span class="material-symbols-outlined text-4xl text-primary opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</article>
+<!-- Service 2 -->
+<article class="py-12 border-b border-primary flex flex-col md:flex-row md:items-baseline justify-between group hover:bg-surface-container transition-all duration-300 cursor-pointer">
+<h2 class="font-headline-md text-headline-md text-primary w-full md:w-1/2">
+                        SEO &amp; Acquisition
+                    </h2>
+<div class="w-full md:w-1/2 mt-4 md:mt-0 flex justify-between items-center">
+<p class="font-body-lg text-body-lg text-secondary group-hover:text-primary transition-colors duration-300">Votre site web est un trésor pour générer des leads gratuitement et vous ne le soignez pas comme il devrait.</p>
+<span class="material-symbols-outlined text-4xl text-primary opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</article>
+</div>
+</section>
+<!-- Audit Section -->
+<section class="px-margin-desktop md:px-margin-desktop px-margin-mobile pb-section-gap max-w-container-max mx-auto w-full reveal">
+<div class="bg-primary text-on-primary p-12 md:p-24 flex flex-col items-center justify-center text-center">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg mb-8 max-w-[800px]">
+                    Audit gratuit de 30min pour identifier vos leviers.
+                </h3>
+<a class="bg-surface-white text-primary rounded-full px-8 py-4 font-button-text text-button-text hover:bg-surface-dim hover:scale-105 active:scale-95 transition-all duration-300 flex items-center gap-2" href="contact.html">
+                    Réserver l'audit gratuit
+                    <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</section>
+</main>
+<!-- Omnipresent CTA (Fixed Bottom Right) -->
+<div class="fixed bottom-8 right-8 z-50">
+<a class="bg-primary text-on-primary rounded-full px-6 py-4 font-button-text text-button-text shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 flex items-center gap-2" href="contact.html">
+            Réserver l'audit gratuit
+            <span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+</a>
+</div>
+<!-- Footer Shared Component -->
+<footer class="w-full py-gutter px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-4 border-t border-primary bg-background reveal">
+<div class="font-headline-md text-headline-md font-bold text-primary">
+            Aptibots
+        </div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors duration-300" href="#">Mentions Légales</a>
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors duration-300" href="#">Politique de Confidentialité</a>
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors duration-300" href="#">LinkedIn</a>
+<a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors duration-300" href="#">Instagram</a>
+</div>
+<div class="font-body-md text-body-md text-secondary">© 2026 Aptibots. Tous droits réservés.</div>
+</footer>
+<script>
+    // Intersection Observer for scroll-triggered reveal animations
+    document.addEventListener('DOMContentLoaded', () => {
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    // Once animated, stop observing this element
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        revealElements.forEach(element => {
+            revealObserver.observe(element);
+        });
+    });
+</script>
+</body></html>

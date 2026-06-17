@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aptibots - Case Studies</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#cfc4c5",
+                        "surface-tint": "#5e5e5e",
+                        "surface-bright": "#f9f9f9",
+                        "primary-container": "#1b1b1b",
+                        "inverse-primary": "#c6c6c6",
+                        "surface-white": "#FFFFFF",
+                        "secondary-fixed": "#e2e2e2",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "error-container": "#ffdad6",
+                        "background-canvas": "#F5F5F5",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface": "#f9f9f9",
+                        "surface-variant": "#e2e2e2",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-secondary-container": "#5f6161",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#454747",
+                        "primary-fixed": "#e2e2e2",
+                        "on-primary-fixed": "#1b1b1b",
+                        "tertiary-container": "#1b1b1b",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1b1b1b",
+                        "secondary": "#5d5f5f",
+                        "on-tertiary-container": "#848484",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "on-surface": "#1b1b1b",
+                        "tertiary": "#000000",
+                        "on-primary": "#ffffff",
+                        "on-surface-variant": "#4c4546",
+                        "surface-dim": "#dadada",
+                        "surface-container-high": "#e8e8e8",
+                        "on-primary-container": "#848484",
+                        "text-main": "#000000",
+                        "primary": "#000000",
+                        "background": "#f9f9f9",
+                        "on-primary-fixed-variant": "#474747",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "on-secondary": "#ffffff",
+                        "outline": "#7e7576",
+                        "secondary-container": "#dcdddd",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "surface-container": "#eeeeee",
+                        "inverse-surface": "#303030",
+                        "on-tertiary-fixed": "#1b1b1b",
+                        "surface-container-low": "#f3f3f3",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#f1f1f1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "160px",
+                        "container-max": "1280px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px",
+                        "unit": "8px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "button-text": ["Inter", "sans-serif"],
+                        "body-lg": ["Inter", "sans-serif"],
+                        "headline-lg": ["Inter", "sans-serif"],
+                        "label-caps": ["Inter", "sans-serif"],
+                        "headline-md": ["Inter", "sans-serif"],
+                        "headline-display-mobile": ["Inter", "sans-serif"],
+                        "headline-display": ["Inter", "sans-serif"],
+                        "body-md": ["Inter", "sans-serif"],
+                        "headline-lg-mobile": ["Inter", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "button-text": ["16px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "headline-lg": ["72px", { "lineHeight": "76px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "headline-md": ["40px", { "lineHeight": "44px", "fontWeight": "700" }],
+                        "headline-display-mobile": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-display": ["120px", { "lineHeight": "110px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                transition: none;
+                opacity: 1;
+                transform: none;
+            }
+            .transition-transform, .transition-all, .transition-colors {
+                transition-duration: 0s !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background text-primary antialiased min-h-screen flex flex-col">
+<!-- Navigation from JSON -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop py-4 bg-background dark:bg-background border-b border-primary dark:border-on-background flat no shadows">
+<a class="font-headline-md text-headline-md font-bold text-primary dark:text-on-background" href="index.html">Aptibots</a>
+<!-- Desktop Nav -->
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-secondary dark:text-on-secondary-container hover:opacity-70 transition-opacity font-label-caps text-label-caps" href="services.html">Services</a>
+<a class="text-primary dark:text-on-background font-bold border-b-2 border-primary hover:opacity-70 transition-opacity font-label-caps text-label-caps" href="case-studies.html">Case Studies</a>
+</div>
+<div class="hidden md:block">
+<a class="bg-primary text-on-primary px-6 py-3 rounded-full font-button-text text-button-text flex items-center gap-2 hover:bg-surface-tint hover:scale-[1.02] active:scale-[0.98] transition-all duration-300" href="contact.html">
+                Réserver l'audit <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow pt-[120px] pb-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+<!-- Hero Header -->
+<header class="mb-section-gap mt-16 md:mt-32 max-w-4xl reveal">
+<h1 class="font-headline-display-mobile text-headline-display-mobile md:font-headline-display md:text-headline-display text-primary mb-6">
+                Résultats<br/>réels.
+            </h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl">
+                Livraison 2-4 semaines pour chaque projet. Une approche architecturale de la croissance.
+            </p>
+</header>
+<!-- Case Studies List -->
+<section class="space-y-16 md:space-y-32 mb-section-gap">
+<!-- Case Study 1 -->
+<article class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start border-t border-primary pt-8 reveal">
+<div class="md:col-span-4">
+<h2 class="font-headline-md text-headline-md text-primary mb-2">Projet Tech</h2>
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest">SEO</span>
+</div>
+<div class="md:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+<div>
+<h3 class="font-button-text text-button-text text-secondary mb-2">Le Problème</h3>
+<p class="font-body-md text-body-md text-primary mb-6">Site web non maintenu depuis 10 ans, rempli de bots, avec des éléments cassés et une perte totale de visibilité.</p>
+<h3 class="font-button-text text-button-text text-secondary mb-2">La Solution</h3>
+<p class="font-body-md text-body-md text-primary">Mise à jour complète des titres et optimisation du SEO technique.</p>
+</div>
+<div>
+<h3 class="font-button-text text-button-text text-secondary mb-2">Le Résultat</h3>
+<div class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary">x10 <span class="font-body-md text-body-md align-middle text-secondary">Clics</span></div>
+</div>
+</div>
+</article>
+<!-- Case Study 2 -->
+<article class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start border-t border-primary pt-8 border-b pb-8 reveal">
+<div class="md:col-span-4">
+<h2 class="font-headline-md text-headline-md text-primary mb-2">Agence Immobilière</h2>
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest">Automatisation</span>
+</div>
+<div class="md:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+<div>
+<h3 class="font-button-text text-button-text text-secondary mb-2">Le Problème</h3>
+<p class="font-body-md text-body-md text-primary mb-6">Copier-coller manuel des leads entrants depuis les emails vers un Google Sheet, un processus extrêmement chronophage.</p>
+<h3 class="font-button-text text-button-text text-secondary mb-2">La Solution</h3>
+<p class="font-body-md text-body-md text-primary">Création d'un CRM sur mesure qui inscrit automatiquement les leads avec suivi des statuts.</p>
+</div>
+<div>
+<h3 class="font-button-text text-button-text text-secondary mb-2">Le Résultat</h3>
+<div class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg text-primary break-words md:text-headline-md">10h/semaine <span class="font-body-md text-body-md align-middle text-secondary">sauvées et meilleure clarté sur la gestion des leads</span></div>
+</div>
+</div>
+</article>
+</section>
+<!-- CTA Section -->
+<section class="text-center py-section-gap reveal">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary mb-8 max-w-3xl mx-auto">
+                Prêt à restructurer votre croissance ?
+            </h2>
+<a class="bg-primary text-on-primary px-8 py-4 rounded-full font-button-text text-button-text inline-flex items-center gap-3 hover:bg-surface-tint hover:scale-105 active:scale-95 transition-all duration-300 text-lg" href="contact.html">
+                Réserver l'audit gratuit <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</section>
+</main>
+<!-- Footer from JSON -->
+<footer class="w-full py-gutter px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-4 bg-background dark:bg-background border-t border-primary dark:border-on-background flat no shadows reveal">
+<div class="font-headline-md text-headline-md font-bold text-primary">Aptibots</div>
+<div class="flex flex-wrap gap-6 items-center justify-center">
+<a class="text-secondary dark:text-on-secondary-container hover:text-primary dark:hover:text-on-background transition-colors font-label-caps text-label-caps" href="#">Mentions Légales</a>
+<a class="text-secondary dark:text-on-secondary-container hover:text-primary dark:hover:text-on-background transition-colors font-label-caps text-label-caps" href="#">Politique de Confidentialité</a>
+<a class="text-secondary dark:text-on-secondary-container hover:text-primary dark:hover:text-on-background transition-colors font-label-caps text-label-caps" href="#">LinkedIn</a>
+<a class="text-secondary dark:text-on-secondary-container hover:text-primary dark:hover:text-on-background transition-colors font-label-caps text-label-caps" href="#">Instagram</a>
+</div>
+<div class="text-secondary font-body-md text-body-md text-sm">© 2026 Aptibots. Tous droits réservés.</div>
+</footer>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const observerOptions = {
+            root: null,
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    // Stop observing once it has revealed
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+    });
+</script>
+</body></html>
