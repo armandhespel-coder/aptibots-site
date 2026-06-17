@@ -4,6 +4,16 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Réserver l'audit - Aptibots</title>
+<meta content="Réservez votre audit gratuit de 30 minutes pour analyser vos processus et votre SEO avec Aptibots." name="description"/>
+<link href="https://aptibots.com/contact" rel="canonical"/>
+<meta content="Réserver l'audit - Aptibots" property="og:title"/>
+<meta content="30 minutes pour analyser vos processus et votre SEO." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://aptibots.com/contact" property="og:url"/>
+<meta content="fr_FR" property="og:locale"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="Réserver l'audit - Aptibots" name="twitter:title"/>
+<meta content="30 minutes pour analyser vos processus et votre SEO." name="twitter:description"/>
 <!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <!-- Google Fonts: Inter -->
@@ -175,8 +185,17 @@
                 30 minutes pour analyser vos processus et votre SEO.
             </p>
 </div>
+<!-- Form success message (hidden by default) -->
+<div class="hidden w-full max-w-xl flex-col items-center text-center gap-4 border border-primary p-12" id="form-success">
+<span class="material-symbols-outlined text-5xl">check_circle</span>
+<h2 class="font-headline-md text-headline-md text-primary">Demande envoyée.</h2>
+<p class="font-body-md text-body-md text-secondary">Nous vous recontactons rapidement pour planifier votre audit gratuit.</p>
+</div>
 <!-- Brutalist Form Container -->
-<form class="w-full max-w-xl flex flex-col gap-6 animate-fade-up" onsubmit="event.preventDefault();" style="animation-delay: 0.3s; opacity: 0;">
+<form action="https://api.web3forms.com/submit" class="w-full max-w-xl flex flex-col gap-6 animate-fade-up" id="contact-form" method="POST" style="animation-delay: 0.3s; opacity: 0;">
+<input name="access_key" type="hidden" value="895a06ec-25f7-40fc-bf03-dcb75c01f6b2"/>
+<input name="subject" type="hidden" value="Nouvelle demande d'audit - Aptibots"/>
+<input name="from_name" type="hidden" value="Site Aptibots"/>
 <!-- Input: Nom -->
 <div class="flex flex-col md:flex-row gap-6">
 <div class="flex flex-col group flex-grow">
@@ -202,9 +221,10 @@
 <label class="font-label-caps text-label-caps text-primary mb-2 uppercase tracking-widest" for="problematique">Votre Problématique</label>
 <textarea class="w-full border border-primary bg-transparent py-4 px-4 font-body-md text-body-md text-primary placeholder:text-outline focus:outline-none focus:ring-0 focus:border-tertiary transition-colors rounded-none appearance-none min-h-[120px]" id="problematique" name="problematique" placeholder="Expliquez en 2-3 lignes le souci que vous rencontrez..."></textarea>
 </div>
+<p class="hidden font-body-md text-body-md text-error" id="form-error">Une erreur est survenue, merci de réessayer ou de nous écrire directement à armand.hespel@hotmail.com.</p>
 <!-- Submit Button (Black Pill with Arrow) -->
-<button class="mt-8 w-full bg-primary text-on-primary rounded-full py-5 px-8 flex justify-center items-center gap-3 font-button-text text-button-text hover:bg-surface-tint transition-all duration-300 group cursor-pointer border border-primary hover:border-surface-tint hover:shadow-lg active:scale-[0.98]" type="submit">
-<span class="uppercase tracking-wider">Envoyer la demande</span>
+<button class="mt-8 w-full bg-primary text-on-primary rounded-full py-5 px-8 flex justify-center items-center gap-3 font-button-text text-button-text hover:bg-surface-tint transition-all duration-300 group cursor-pointer border border-primary hover:border-surface-tint hover:shadow-lg active:scale-[0.98] disabled:opacity-50" id="submit-btn" type="submit">
+<span class="uppercase tracking-wider" id="submit-label">Envoyer la demande</span>
 <span class="material-symbols-outlined text-[20px] group-hover:translate-x-2 transition-transform duration-300" style="font-variation-settings: 'FILL' 0, 'wght' 600;">arrow_forward</span>
 </button>
 </form>
@@ -228,5 +248,39 @@
             mobileMenu.classList.toggle('flex');
         });
     }
+
+    const contactForm = document.getElementById('contact-form');
+    const formError = document.getElementById('form-error');
+    const formSuccess = document.getElementById('form-success');
+    const submitBtn = document.getElementById('submit-btn');
+    const submitLabel = document.getElementById('submit-label');
+
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        formError.classList.add('hidden');
+        submitBtn.disabled = true;
+        submitLabel.textContent = 'Envoi en cours...';
+
+        try {
+            const response = await fetch(contactForm.action, {
+                method: 'POST',
+                headers: { 'Accept': 'application/json' },
+                body: new FormData(contactForm)
+            });
+            const result = await response.json();
+
+            if (result.success) {
+                contactForm.classList.add('hidden');
+                formSuccess.classList.remove('hidden');
+                formSuccess.classList.add('flex');
+            } else {
+                throw new Error(result.message || 'Erreur inconnue');
+            }
+        } catch (err) {
+            formError.classList.remove('hidden');
+            submitBtn.disabled = false;
+            submitLabel.textContent = 'Envoyer la demande';
+        }
+    });
 </script>
 </body></html>
