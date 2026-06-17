@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mentions Légales | Aptibots</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#5d5f5f",
+                        "primary": "#000000",
+                        "background": "#f9f9f9",
+                        "on-primary": "#ffffff",
+                        "surface-white": "#FFFFFF",
+                        "surface-container": "#eeeeee",
+                        "surface-variant": "#e2e2e2",
+                        "on-surface-variant": "#4c4546"
+                    },
+                    "borderRadius": { "DEFAULT": "0.25rem", "full": "9999px" },
+                    "spacing": {
+                        "section-gap": "160px",
+                        "container-max": "1280px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "button-text": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-display-mobile": ["Inter"],
+                        "headline-display": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "button-text": ["16px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "body-lg": ["20px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "headline-lg": ["72px", { "lineHeight": "76px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "headline-md": ["40px", { "lineHeight": "44px", "fontWeight": "700" }],
+                        "headline-display-mobile": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-display": ["96px", { "lineHeight": "100px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #f9f9f9; color: #1b1b1b; font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .legal-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+        @media (min-width: 1024px) {
+            .legal-grid { grid-template-columns: 220px 1fr; gap: 64px; }
+        }
+    </style>
+</head>
+<body class="bg-background text-primary font-body-md antialiased min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 bg-background border-b border-primary">
+<a class="font-headline-md text-headline-md font-bold text-primary" href="index.html">Aptibots</a>
+<div class="hidden md:flex gap-gutter items-center">
+<a class="font-label-caps text-label-caps text-secondary hover:opacity-70 transition-opacity" href="services.html">Services</a>
+<a class="font-label-caps text-label-caps text-secondary hover:opacity-70 transition-opacity" href="case-studies.html">Case Studies</a>
+</div>
+<a class="hidden md:flex bg-primary text-on-primary font-button-text text-button-text rounded-full px-6 py-3 items-center gap-2" href="contact.html">
+            Réserver l'audit
+            <span class="material-symbols-outlined text-xl">arrow_forward</span>
+</a>
+<button aria-label="Menu" class="md:hidden text-primary flex items-center justify-center p-2 border border-primary" id="menu-toggle">
+<span class="material-symbols-outlined" style="font-size: 28px;">menu</span>
+</button>
+</nav>
+<div class="hidden md:hidden fixed inset-0 z-40 bg-background pt-24 px-margin-mobile flex-col gap-6" id="mobile-menu">
+<a class="font-label-caps text-label-caps text-primary border-b border-primary/20 pb-4" href="index.html">Accueil</a>
+<a class="font-label-caps text-label-caps text-secondary border-b border-primary/20 pb-4" href="services.html">Services</a>
+<a class="font-label-caps text-label-caps text-secondary border-b border-primary/20 pb-4" href="propos.html">À Propos</a>
+<a class="font-label-caps text-label-caps text-secondary border-b border-primary/20 pb-4" href="case-studies.html">Case Studies</a>
+<a class="bg-primary text-on-primary font-button-text text-button-text rounded-full px-6 py-4 flex items-center justify-center gap-2 mt-4" href="contact.html">
+                Réserver l'audit
+                <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<!-- Main Content -->
+<main class="flex-grow max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-32 pb-section-gap w-full">
+<header class="mb-16 md:mb-24">
+<h1 class="font-headline-display-mobile md:font-headline-display text-headline-display-mobile md:text-headline-display text-primary mb-6">
+                Mentions<br/>Légales.
+            </h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl">
+                Informations obligatoires concernant l'éditeur du site Aptibots, ses conditions d'utilisation et ses responsabilités légales.
+            </p>
+</header>
+<div class="space-y-16">
+<!-- 01 -->
+<section class="legal-grid border-t border-primary pt-8">
+<div class="font-label-caps text-label-caps text-secondary uppercase tracking-widest">01 — Éditeur du site</div>
+<div class="font-body-md text-body-md text-on-surface-variant space-y-4 max-w-2xl">
+<p class="font-headline-md text-headline-md text-primary">Aptibots</p>
+<p>Entreprise individuelle exploitée par Armand Hespel.<br/>
+                            Contact : armand.hespel@hotmail.com</p>
+<p>Directeur de la publication : Armand Hespel.</p>
+</div>
+</section>
+<!-- 02 -->
+<section class="legal-grid border-t border-primary pt-8">
+<div class="font-label-caps text-label-caps text-secondary uppercase tracking-widest">02 — Hébergement</div>
+<div class="font-body-md text-body-md text-on-surface-variant space-y-4 max-w-2xl">
+<p class="font-headline-md text-headline-md text-primary">Vercel Inc.</p>
+<address class="not-italic">
+                            440 N Barranca Ave #4133<br/>
+                            Covina, CA 91723<br/>
+                            États-Unis
+                        </address>
+</div>
+</section>
+<!-- 03 -->
+<section class="legal-grid border-t border-primary pt-8">
+<div class="font-label-caps text-label-caps text-secondary uppercase tracking-widest">03 — Propriété intellectuelle</div>
+<div class="font-body-md text-body-md text-on-surface-variant space-y-4 max-w-2xl">
+<p>L'ensemble des contenus présents sur ce site (textes, graphismes, logos, icônes) est la propriété exclusive d'Aptibots, sauf mention contraire.</p>
+<p>Toute reproduction, représentation, modification ou publication, totale ou partielle, de ces éléments est interdite sans autorisation écrite préalable d'Aptibots.</p>
+</div>
+</section>
+<!-- 04 -->
+<section class="legal-grid border-t border-primary pt-8 pb-16">
+<div class="font-label-caps text-label-caps text-secondary uppercase tracking-widest">04 — Responsabilité</div>
+<div class="font-body-md text-body-md text-on-surface-variant space-y-4 max-w-2xl">
+<p>Aptibots s'efforce de fournir sur ce site des informations aussi précises que possible. Elle ne pourra toutefois être tenue responsable des omissions, inexactitudes ou carences dans la mise à jour, qu'elles soient de son fait ou du fait des tiers partenaires.</p>
+<p>Ce site peut contenir des liens vers d'autres sites. Aptibots n'a pas la possibilité de vérifier le contenu de ces sites et n'assumera aucune responsabilité de ce fait.</p>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-gutter px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-start md:items-center gap-8 md:gap-4 border-t border-primary bg-background">
+<div class="font-headline-md text-headline-md font-bold text-primary">Aptibots</div>
+<nav class="flex flex-col md:flex-row flex-wrap justify-center gap-6 w-full md:w-auto">
+<a class="font-label-caps text-label-caps text-primary underline border-b border-primary/20 pb-4 md:border-b-0 md:pb-0" href="mentions-legales.html">Mentions Légales</a>
+<a class="font-label-caps text-label-caps text-secondary hover:text-primary transition-colors border-b border-primary/20 pb-4 md:border-b-0 md:pb-0" href="confidentialite.html">Politique de Confidentialité</a>
+<a class="font-label-caps text-label-caps text-secondary hover:text-primary transition-colors border-b border-primary/20 pb-4 md:border-b-0 md:pb-0" href="#">LinkedIn</a>
+<a class="font-label-caps text-label-caps text-secondary hover:text-primary transition-colors" href="#">Instagram</a>
+</nav>
+<div class="font-body-md text-body-md text-secondary">© 2026 Aptibots. Tous droits réservés.</div>
+</footer>
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+    }
+</script>
+</body></html>

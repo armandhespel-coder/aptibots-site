@@ -147,10 +147,23 @@
 <a class="font-label-caps text-label-caps text-secondary hover:opacity-70 transition-opacity" href="case-studies.html">Case Studies</a>
 </nav>
 <!-- Primary Action as a minimalist pill button per brand guide -->
-<a class="bg-primary text-on-primary rounded-full px-6 py-2 flex items-center gap-2 font-button-text text-button-text hover:bg-surface-tint transition-all duration-300 group" href="contact.html">
+<a class="hidden md:flex bg-primary text-on-primary rounded-full px-6 py-2 items-center gap-2 font-button-text text-button-text hover:bg-surface-tint transition-all duration-300 group" href="contact.html">
 <span>Réserver l'audit</span>
 </a>
+<button aria-label="Menu" class="md:hidden text-primary flex items-center justify-center p-2 border border-primary" id="menu-toggle">
+<span class="material-symbols-outlined" style="font-size: 28px;">menu</span>
+</button>
 </header>
+<div class="hidden md:hidden fixed inset-0 z-40 bg-background pt-24 px-margin-mobile flex-col gap-6" id="mobile-menu">
+<a class="font-label-caps text-label-caps text-secondary border-b border-primary/20 pb-4" href="index.html">Accueil</a>
+<a class="font-label-caps text-label-caps text-secondary border-b border-primary/20 pb-4" href="services.html">Services</a>
+<a class="font-label-caps text-label-caps text-secondary border-b border-primary/20 pb-4" href="propos.html">À Propos</a>
+<a class="font-label-caps text-label-caps text-secondary border-b border-primary/20 pb-4" href="case-studies.html">Case Studies</a>
+<a class="bg-primary text-on-primary font-button-text text-button-text rounded-full px-6 py-4 flex items-center justify-center gap-2 mt-4" href="contact.html">
+                Réserver l'audit
+                <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
 <!-- Main Content: Centered Minimalist Form -->
 <main class="flex-grow flex flex-col items-center justify-center px-margin-mobile md:px-margin-desktop pt-[120px] pb-section-gap">
 <!-- Typography Architecture -->
@@ -197,13 +210,23 @@
 </form>
 </main>
 <!-- Footer -->
-<footer class="w-full py-gutter px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-8 border-t border-primary bg-background mt-auto animate-fade-up" style="animation-delay: 0.4s; opacity: 0;">
+<footer class="w-full py-gutter px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-start md:items-center gap-8 border-t border-primary bg-background mt-auto animate-fade-up" style="animation-delay: 0.4s; opacity: 0;">
 <div class="font-body-md text-body-md text-secondary">© 2026 Aptibots. Tous droits réservés.</div>
-<div class="flex flex-wrap justify-center md:justify-end gap-6 md:gap-8">
-<a class="font-label-caps text-label-caps text-secondary hover:text-primary transition-colors" href="#">Mentions Légales</a>
-<a class="font-label-caps text-label-caps text-secondary hover:text-primary transition-colors" href="#">Politique de Confidentialité</a>
+<div class="flex flex-col md:flex-row flex-wrap justify-center md:justify-end gap-6 md:gap-8 w-full md:w-auto">
+<a class="font-label-caps text-label-caps text-secondary hover:text-primary transition-colors border-b border-primary/20 pb-4 md:border-b-0 md:pb-0" href="mentions-legales.html">Mentions Légales</a>
+<a class="font-label-caps text-label-caps text-secondary hover:text-primary transition-colors border-b border-primary/20 pb-4 md:border-b-0 md:pb-0" href="confidentialite.html">Politique de Confidentialité</a>
 <a class="font-label-caps text-label-caps text-secondary hover:text-primary transition-colors" href="#">LinkedIn</a>
 <a class="font-label-caps text-label-caps text-secondary hover:text-primary transition-colors" href="#">Instagram</a>
 </div>
 </footer>
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+    }
+</script>
 </body></html>

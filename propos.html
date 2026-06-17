@@ -162,11 +162,21 @@
 </a>
 </div>
 <div class="md:hidden">
-<button class="p-2 border border-primary rounded flex items-center justify-center btn-transition active:scale-95">
+<button aria-label="Menu" class="p-2 border border-primary rounded flex items-center justify-center btn-transition active:scale-95" id="menu-toggle">
 <span class="material-symbols-outlined">menu</span>
 </button>
 </div>
 </nav>
+<div class="hidden md:hidden fixed inset-0 z-40 bg-background pt-24 px-margin-mobile flex-col gap-6" id="mobile-menu">
+<a class="font-label-caps text-label-caps text-secondary border-b border-primary/20 pb-4" href="index.html">Accueil</a>
+<a class="font-label-caps text-label-caps text-secondary border-b border-primary/20 pb-4" href="services.html">Services</a>
+<a class="font-label-caps text-label-caps text-primary border-b border-primary/20 pb-4" href="propos.html">À Propos</a>
+<a class="font-label-caps text-label-caps text-secondary border-b border-primary/20 pb-4" href="case-studies.html">Case Studies</a>
+<a class="bg-primary text-on-primary font-button-text text-button-text rounded-full px-6 py-4 flex items-center justify-center gap-2 mt-4" href="contact.html">
+                Réserver l'audit
+                <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
 <main class="w-full">
 <!-- Hero Typographique -->
 <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-section-gap pb-[80px] flex flex-col gap-8 md:gap-16 reveal">
@@ -207,8 +217,8 @@
             Aptibots
         </div>
 <div class="flex flex-col md:flex-row flex-wrap justify-center items-center gap-6 w-full md:w-auto">
-<a class="font-label-caps text-label-caps text-secondary hover:text-primary transition-colors duration-300" href="#">Mentions Légales</a>
-<a class="font-label-caps text-label-caps text-secondary hover:text-primary transition-colors duration-300" href="#">Politique de Confidentialité</a>
+<a class="font-label-caps text-label-caps text-secondary hover:text-primary transition-colors duration-300" href="mentions-legales.html">Mentions Légales</a>
+<a class="font-label-caps text-label-caps text-secondary hover:text-primary transition-colors duration-300" href="confidentialite.html">Politique de Confidentialité</a>
 <a class="font-label-caps text-label-caps text-secondary hover:text-primary transition-colors duration-300" href="#">LinkedIn</a>
 <a class="font-label-caps text-label-caps text-secondary hover:text-primary transition-colors duration-300" href="#">Instagram</a>
 </div>
@@ -235,6 +245,15 @@
 
         const revealElements = document.querySelectorAll('.reveal');
         revealElements.forEach(el => observer.observe(el));
+
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (menuToggle && mobileMenu) {
+            menuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.toggle('flex');
+            });
+        }
     });
 </script>
 </body></html>
