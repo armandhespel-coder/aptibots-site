@@ -179,6 +179,9 @@
                 contactForm.classList.add('hidden');
                 formSuccess.classList.remove('hidden');
                 formSuccess.classList.add('flex');
+                if (window.gtag) {
+                    gtag('event', 'generate_lead', { form_name: 'contact' });
+                }
             } else {
                 throw new Error(result.message || 'Erreur inconnue');
             }
