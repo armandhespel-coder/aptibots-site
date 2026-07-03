@@ -23,23 +23,32 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     var banner = document.getElementById("cookie-consent-banner");
-    if (!banner) return;
+    var manageBtn = document.getElementById("manage-cookies");
 
-    var stored = localStorage.getItem(KEY);
-    if (stored === "granted") { grant(); return; }
-    if (stored === "denied") { return; }
+    if (banner) {
+      var stored = localStorage.getItem(KEY);
+      if (stored === "granted") {
+        grant();
+      } else if (stored !== "denied") {
+        banner.classList.remove("hidden");
+      }
 
-    banner.classList.remove("hidden");
+      document.getElementById("cc-accept").addEventListener("click", function () {
+        localStorage.setItem(KEY, "granted");
+        grant();
+        banner.classList.add("hidden");
+      });
 
-    document.getElementById("cc-accept").addEventListener("click", function () {
-      localStorage.setItem(KEY, "granted");
-      grant();
-      banner.classList.add("hidden");
-    });
+      document.getElementById("cc-refuse").addEventListener("click", function () {
+        localStorage.setItem(KEY, "denied");
+        banner.classList.add("hidden");
+      });
+    }
 
-    document.getElementById("cc-refuse").addEventListener("click", function () {
-      localStorage.setItem(KEY, "denied");
-      banner.classList.add("hidden");
-    });
+    if (manageBtn && banner) {
+      manageBtn.addEventListener("click", function () {
+        banner.classList.remove("hidden");
+      });
+    }
   });
 })();
