@@ -19,7 +19,6 @@ Backlog de sujets pour le blog. Cocher `[x]` une fois publié dans `public/blog/
 ## Pilier 3 — Case studies détaillées (repurposing de /case-studies)
 - [ ] Comment on a fait x10 sur les clics SEO d'un site tech à l'abandon
 - [ ] Le CRM qu'on a construit pour une agence immobilière (10h/semaine sauvées)
-- [ ] Anatomie d'un audit de 30 minutes : ce qu'on regarde vraiment
 
 ## Pilier 4 — Crédibilité / positionnement
 - [ ] Pourquoi j'ai quitté [contexte perso] pour faire de l'IA et du SEO en freelance
@@ -34,6 +33,7 @@ Backlog de sujets pour le blog. Cocher `[x]` une fois publié dans `public/blog/
 
 ## Déjà publiés
 - [x] Comment avoir des clients sans payer de pub — la méthode site + Google Business (`public/blog/comment-avoir-des-clients-sans-payer-de-pub.md`)
+- [x] Anatomie d'un audit de 30 minutes : ce qu'on regarde vraiment (`public/blog/anatomie-audit-30-minutes.md`)
 
 ---
 
