@@ -15,6 +15,7 @@ Backlog de sujets pour le blog. Cocher `[x]` une fois publié dans `public/blog/
 - [ ] Comment un agent IA peut remplacer 10h/semaine de saisie manuelle
 - [ ] L'IA générative vs l'automatisation : la confusion qui coûte cher
 - [ ] Pourquoi la plupart des projets d'automatisation échouent (et comment éviter ça)
+- [ ] Google Business sans adresse physique : comment faire
 
 ## Pilier 3 — Case studies détaillées (repurposing de /case-studies)
 - [ ] Comment on a fait x10 sur les clics SEO d'un site tech à l'abandon
@@ -34,6 +35,7 @@ Backlog de sujets pour le blog. Cocher `[x]` une fois publié dans `public/blog/
 ## Déjà publiés
 - [x] Comment avoir des clients sans payer de pub — la méthode site + Google Business (`public/blog/comment-avoir-des-clients-sans-payer-de-pub.md`)
 - [x] Anatomie d'un audit de 30 minutes : ce qu'on regarde vraiment (`public/blog/anatomie-audit-30-minutes.md`)
+- [x] Combien coûte une automatisation IA pour une PME (`public/blog/combien-coute-automatisation-ia.md`)
 
 ---
 
