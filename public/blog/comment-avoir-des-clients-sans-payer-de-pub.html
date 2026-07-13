@@ -83,6 +83,11 @@
                 scroll-behavior: auto !important;
             }
         }
+
+        .article-grid { display: grid; grid-template-columns: 1fr; gap: 40px; }
+        @media (min-width: 1024px) {
+            .article-grid { grid-template-columns: 260px 1fr; gap: 64px; }
+        }
       </style>
 <link href="/styles.css" rel="stylesheet"/>
 </head>
@@ -123,16 +128,29 @@
 </a>
 </div>
 <main class="flex-grow pt-[120px] pb-section-gap">
-<article class="px-margin-desktop md:px-margin-desktop px-margin-mobile max-w-[760px] mx-auto w-full">
+<article class="px-margin-desktop md:px-margin-desktop px-margin-mobile max-w-[1104px] mx-auto w-full">
 <div class="reveal">
 <a class="font-label-caps text-label-caps text-secondary hover:text-primary transition-colors" href="/blog">&larr; Blog</a>
 
-<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary mt-6 mb-4">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary mt-6 mb-4 max-w-[760px]">
                 Comment avoir des clients sans payer de pub — la méthode site + Google Business
             </h1>
 <p class="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-12">Par Armand Hespel — 10 juillet 2026</p>
 </div>
 
+<div class="article-grid">
+<aside class="hidden lg:block">
+<nav class="sticky top-32 space-y-4">
+<a class="toc-link block font-label-caps text-label-caps text-primary border-l-2 border-primary pl-4 py-1" data-target="pourquoi" href="#pourquoi">01. Pourquoi inverser la méthode</a>
+<a class="toc-link block font-label-caps text-label-caps text-secondary border-l-2 border-transparent hover:text-primary transition-colors pl-4 py-1" data-target="piliers" href="#piliers">02. Les deux piliers</a>
+<a class="toc-link block font-label-caps text-label-caps text-secondary border-l-2 border-transparent hover:text-primary transition-colors pl-4 py-1" data-target="duree" href="#duree">03. Combien de temps</a>
+<a class="toc-link block font-label-caps text-label-caps text-secondary border-l-2 border-transparent hover:text-primary transition-colors pl-4 py-1" data-target="lecon" href="#lecon">04. Ce que j'ai appris</a>
+<a class="toc-link block font-label-caps text-label-caps text-secondary border-l-2 border-transparent hover:text-primary transition-colors pl-4 py-1" data-target="articles-utiles" href="#articles-utiles">05. Les articles, ça sert ?</a>
+<a class="toc-link block font-label-caps text-label-caps text-secondary border-l-2 border-transparent hover:text-primary transition-colors pl-4 py-1" data-target="methode" href="#methode">06. La méthode en 5 étapes</a>
+</nav>
+</aside>
+
+<div class="max-w-[760px]">
 <div class="font-body-lg text-body-lg text-secondary leading-relaxed">
 
 <p class="my-5">J'ai tout essayé pour trouver des clients : messages Instagram, mails, automatisations LinkedIn, appels à froid, bouche-à-oreille. Certaines choses fonctionnent, d'autres moins. Mais tout a un point commun : le temps.</p>
@@ -141,7 +159,7 @@
 
 <p class="my-5">C'est le chemin inverse. Au lieu de courir après les prospects, on construit quelque chose qui les attire. Concrètement, ce quelque chose se résume à deux éléments : un site internet optimisé et une fiche Google Business — c'est exactement ce qu'on construit dans notre <a class="text-primary underline hover:opacity-70 transition-opacity" href="/services">service SEO &amp; Acquisition</a>.</p>
 
-<h2 class="font-headline-md text-headline-md text-primary mt-16 mb-5 pt-8 border-t border-primary/20">Pourquoi c'est le moment d'inverser la méthode</h2>
+<h2 id="pourquoi" class="font-headline-md text-headline-md text-primary mt-16 mb-5 pt-8 border-t border-primary/20">Pourquoi c'est le moment d'inverser la méthode</h2>
 
 <p class="my-5">Aujourd'hui, plus personne ne cherche vraiment sur internet. Les gens veulent aller vite. Pour aller vite, ils regardent la première page Google. Peut-être la deuxième. La troisième, ils ne la regardent pas.</p>
 
@@ -151,7 +169,7 @@
 
 <p class="my-5"><strong class="text-primary font-bold">La différence fondamentale :</strong> la pub est un coût continu. Le SEO est un investissement qui continue de rapporter des mois après.</p>
 
-<h2 class="font-headline-md text-headline-md text-primary mt-16 mb-5 pt-8 border-t border-primary/20">Les deux piliers de la visibilité gratuite</h2>
+<h2 id="piliers" class="font-headline-md text-headline-md text-primary mt-16 mb-5 pt-8 border-t border-primary/20">Les deux piliers de la visibilité gratuite</h2>
 
 <h3 class="text-xl font-bold text-primary mt-10 mb-3">1. Un site internet qui n'est pas juste "joli"</h3>
 
@@ -173,7 +191,7 @@
 
 <p class="my-5"><strong class="text-primary font-bold">Note :</strong> si vous n'avez pas d'adresse physique (comme moi pour Aptibots), vous ne pouvez pas créer de fiche Google Business. Mais cela ne vous dispense pas du reste — le site et le contenu deviennent encore plus importants.</p>
 
-<h2 class="font-headline-md text-headline-md text-primary mt-16 mb-5 pt-8 border-t border-primary/20">Combien de temps ça prend ?</h2>
+<h2 id="duree" class="font-headline-md text-headline-md text-primary mt-16 mb-5 pt-8 border-t border-primary/20">Combien de temps ça prend ?</h2>
 
 <p class="my-5">Le SEO n'est pas immédiat. C'est un travail de fond.</p>
 <ul class="list-disc list-outside pl-5 my-6 space-y-2">
@@ -183,7 +201,7 @@
 <li>6+ mois : cycle continu → 200-1000+ vues/mois</li>
 </ul>
 
-<h2 class="font-headline-md text-headline-md text-primary mt-16 mb-5 pt-8 border-t border-primary/20">Ce que j'ai appris en 2026</h2>
+<h2 id="lecon" class="font-headline-md text-headline-md text-primary mt-16 mb-5 pt-8 border-t border-primary/20">Ce que j'ai appris en 2026</h2>
 
 <p class="my-5">J'ai créé Aptibots en juin 2026. Search Console, sitemap, robots.txt, balises, vitesse, mobile — tout était techniquement correct. Pourtant, Google affichait : "Explorée, actuellement non indexée".</p>
 
@@ -193,7 +211,7 @@
 
 <p class="my-5">La leçon : le problème n'était pas technique, c'était le contenu. Un nouveau domaine doit prouver chaque page individuellement.</p>
 
-<h2 class="font-headline-md text-headline-md text-primary mt-16 mb-5 pt-8 border-t border-primary/20">Les articles, ça sert vraiment ?</h2>
+<h2 id="articles-utiles" class="font-headline-md text-headline-md text-primary mt-16 mb-5 pt-8 border-t border-primary/20">Les articles, ça sert vraiment ?</h2>
 
 <p class="my-5">Oui. Chaque article est une nouvelle porte d'entrée sur votre site. Quelqu'un cherche "comment automatiser la prospection" → tombe sur votre article → découvre vos services.</p>
 
@@ -206,7 +224,7 @@
 
 <p class="my-5">Un article par mois, c'est mieux que zéro. Mais un article par semaine est l'idéal. Les articles s'accumulent.</p>
 
-<h2 class="font-headline-md text-headline-md text-primary mt-16 mb-5 pt-8 border-t border-primary/20">La méthode en 5 étapes</h2>
+<h2 id="methode" class="font-headline-md text-headline-md text-primary mt-16 mb-5 pt-8 border-t border-primary/20">La méthode en 5 étapes</h2>
 
 <ol class="list-decimal list-outside pl-5 my-6 space-y-2">
 <li>Auditez votre site — Search Console + PageSpeed Insights</li>
@@ -229,6 +247,8 @@
                 Réserver l'audit gratuit
                 <svg class="material-symbols-outlined" data-icon="arrow_forward" fill="currentColor" viewBox="0 -960 960 960" xmlns="http://www.w3.org/2000/svg"><path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/></svg>
 </a>
+</div>
+</div>
 </div>
 </article>
 </main>
@@ -274,6 +294,32 @@
                 mobileMenu.classList.toggle('flex');
             });
         }
+
+        // Table of contents: smooth scroll + active section highlight
+        document.querySelectorAll('.toc-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.getElementById(link.dataset.target);
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        const tocObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const id = entry.target.getAttribute('id');
+                const link = document.querySelector(`.toc-link[data-target="${id}"]`);
+                if (entry.isIntersecting && link) {
+                    document.querySelectorAll('.toc-link').forEach(l => {
+                        l.classList.replace('text-primary', 'text-secondary');
+                        l.classList.replace('border-primary', 'border-transparent');
+                    });
+                    link.classList.replace('text-secondary', 'text-primary');
+                    link.classList.replace('border-transparent', 'border-primary');
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('h2[id]').forEach(h => tocObserver.observe(h));
     });
 </script>
 <div id="cookie-consent-banner" class="hidden fixed bottom-0 left-0 right-0 z-50 bg-primary text-on-primary p-4 md:p-6">
