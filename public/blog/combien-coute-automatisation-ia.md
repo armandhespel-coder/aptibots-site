@@ -24,9 +24,9 @@ Une automatisation simple à coder qui fait gagner 10h/semaine à un employé va
 
 ## Un cas réel : le CRM à 2 000€
 
-Le CRM sur mesure qu'on a construit pour une agence immobilière (déjà mentionné dans nos case studies) a coûté environ **2 000€** — un scope relativement limité. Résultat : **10h économisées par mois**.
+Le CRM sur mesure qu'on a construit pour une agence immobilière (déjà mentionné dans nos case studies) a coûté environ **2 000€** — un scope relativement limité. Résultat : **10h économisées par semaine**.
 
-Si on compte le temps d'un employé à un coût chargé d'environ 25-30€/h, ça représente 250 à 300€ de valeur récupérée chaque mois. Même en ajoutant les coûts fixes mensuels, le projet reste largement rentable et se rentabilise en un peu plus de 6 mois.
+Si on compte le temps à un coût chargé d'environ 50€/h, ça représente 500€ de valeur récupérée chaque semaine — plus de 2 000€ par mois. Même en ajoutant les coûts fixes mensuels, le projet est rentabilisé en **moins d'un mois**, et continue de faire gagner du temps indéfiniment après.
 
 Le client était ravi — pas seulement du ROI, mais aussi parce que l'outil est simple à utiliser, sur mesure, conçu spécifiquement pour leur façon de travailler.
 
