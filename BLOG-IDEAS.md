@@ -33,6 +33,7 @@ Backlog de sujets pour le blog. Cocher `[x]` une fois publié dans `public/blog/
 - [ ] Ce qui se passe concrètement pendant les 2-4 semaines de livraison
 
 ## Déjà publiés
+- [x] Automatisation IA en entreprise : pourquoi ça ne marche pas (`public/blog/automatisation-ia-entreprise-pourquoi-ca-marche-pas.md`)
 - [x] Comment avoir des clients sans payer de pub — la méthode site + Google Business (`public/blog/comment-avoir-des-clients-sans-payer-de-pub.md`)
 - [x] Anatomie d'un audit de 30 minutes : ce qu'on regarde vraiment (`public/blog/anatomie-audit-30-minutes.md`)
 - [x] Combien coûte une automatisation IA pour une PME (`public/blog/combien-coute-automatisation-ia.md`)
