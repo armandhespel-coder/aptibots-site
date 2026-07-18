@@ -6,9 +6,12 @@
     "build": "tailwindcss -i ./input.css -o ./public/styles.css --minify"
   },
   "devDependencies": {
-    "tailwindcss": "^3.4.17"
+    "tailwindcss": "^3.4.17",
+    "wawoff2": "^2.0.1"
   },
   "dependencies": {
-    "googleapis": "^173.0.0"
+    "@resvg/resvg-js": "^2.6.2",
+    "googleapis": "^173.0.0",
+    "satori": "^0.28.0"
   }
 }

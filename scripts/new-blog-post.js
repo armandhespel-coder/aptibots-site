@@ -17,6 +17,7 @@
 
 const fs = require("fs");
 const path = require("path");
+const { generateOgImage } = require("./generate-og-image");
 
 const ROOT = path.join(__dirname, "..");
 const BLOG_DIR = path.join(ROOT, "public", "blog");
@@ -171,12 +172,16 @@ function buildArticleHtml({ slug, title, author, dateFr, dateIso, excerpt, toc, 
 <meta content="${title} - Aptibots" property="og:title"/>
 <meta content="${excerpt}" property="og:description"/>
 <meta content="https://aptibots.com/blog/${slug}" property="og:url"/>
+<meta content="https://aptibots.com/og/${slug}.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
 <meta content="fr_FR" property="og:locale"/>
 <meta content="${dateIso}" property="article:published_time"/>
 <meta content="${author}" property="article:author"/>
-<meta content="summary" name="twitter:card"/>
+<meta content="summary_large_image" name="twitter:card"/>
 <meta content="${title} - Aptibots" name="twitter:title"/>
 <meta content="${excerpt}" name="twitter:description"/>
+<meta content="https://aptibots.com/og/${slug}.png" name="twitter:image"/>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -443,7 +448,23 @@ function insertIntoSitemap(slug) {
   fs.writeFileSync(sitemapPath, xml, "utf-8");
 }
 
-function main() {
+function markPublishedInIdeas(slug, title) {
+  const ideasPath = path.join(ROOT, "BLOG-IDEAS.md");
+  if (!fs.existsSync(ideasPath)) return false;
+  let md = fs.readFileSync(ideasPath, "utf-8");
+
+  const marker = "## Déjà publiés";
+  const idx = md.indexOf(marker);
+  if (idx === -1) return false;
+
+  const lineEnd = md.indexOf("\n", idx) + 1;
+  const entry = `- [x] ${title} (\`public/blog/${slug}.md\`)\n`;
+  md = md.slice(0, lineEnd) + entry + md.slice(lineEnd);
+  fs.writeFileSync(ideasPath, md, "utf-8");
+  return true;
+}
+
+async function main() {
   const slug = process.argv[2];
   if (!slug) {
     console.error("Usage: node scripts/new-blog-post.js <slug>");
@@ -469,10 +490,18 @@ function main() {
   insertIntoSitemap(slug);
   console.log("✓ Sitemap mis à jour : public/sitemap.xml");
 
-  console.log("\nRappel : pas d'image OG générée automatiquement.");
-  console.log(`Optionnel : ajoute public/og/${slug}.png (1200x630) et le meta og:image dans le .html si tu veux une preview soignée sur les réseaux sociaux.`);
+  await generateOgImage(slug, parsed.title);
+  console.log(`✓ Image OG générée : public/og/${slug}.png`);
+
+  if (markPublishedInIdeas(slug, parsed.title)) {
+    console.log("✓ BLOG-IDEAS.md mis à jour (section Déjà publiés)");
+  }
+
   console.log("\nProchaine étape : git add + commit + push.");
   console.log(`Une fois déployé (déploiement Vercel propagé), lance : node scripts/submit-to-search-console.js blog/${slug}`);
 }
 
-main();
+main().catch((err) => {
+  console.error("Erreur :", err.message);
+  process.exit(1);
+});
