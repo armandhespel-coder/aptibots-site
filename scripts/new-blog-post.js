@@ -472,6 +472,7 @@ function main() {
   console.log("\nRappel : pas d'image OG générée automatiquement.");
   console.log(`Optionnel : ajoute public/og/${slug}.png (1200x630) et le meta og:image dans le .html si tu veux une preview soignée sur les réseaux sociaux.`);
   console.log("\nProchaine étape : git add + commit + push.");
+  console.log(`Une fois déployé (déploiement Vercel propagé), lance : node scripts/submit-to-search-console.js blog/${slug}`);
 }
 
 main();
